@@ -1,0 +1,25 @@
+<head>
+	<title>CSHome</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body style="height:100vh;">
+	<div id="main">
+	<div class="content">
+		<h1 style="display:block; text-align:center;">Hi.</h1>
+		<div id="searchArea" style="float:center">
+		<spacer />
+		<form id="searchForm" onsubmit="return searchTheWeb()" style="display:block;">
+			<input style="text-align:center;width:100%" type="text" id="searchText" placeholder="search the web..">
+		</form>
+		<a id="link1" style="float:center;margin:10px;"></a>
+		</div>
+	</div>
+	<div class="content"><a onclick="openSettings()">Settings</a><a href="https://cscode.pages.dev" style="margin-left:10px;">CSCode</a><a href="https://cstext.pages.dev" style="margin-left:10px;">CSText</a></div>
+	</div>
+	<div id="settings" class="content" style="display:none;">
+		<button onclick="link1Change()">Set or create link1</button>
+		<br>
+		<button onclick="closeSettings()">Close Settings</button>
+	</div>
+	<script src="script.js"></script>
+</body>
