@@ -73,3 +73,5 @@ function showHideSuggested(){
 	}
 	initialise()
 }
+
+initialise()
