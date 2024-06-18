@@ -38,7 +38,7 @@ function getCookie(cname) {
 
 function link1Change(){
 	link1url=prompt("Where do you want this link to go? (clear to remove link)")
-	if (link1url!=null || link1url!="null"){
+	if ((link1url!=null) && link1url != "clear"){
 		link1content=prompt("What do you want this link to say?")
 		setCookie("link1url", link1url, 365)
 		setCookie("link1content", link1content, 365)
@@ -49,12 +49,12 @@ function link1Change(){
 }
 
 function initialise(){
-	if (getCookie("link1url")!=null && getCookie("link1content")!=null){
+	if (getCookie("link1url")!="null" && getCookie("link1content")!="null"){
 		document.getElementById("link1").href = getCookie("link1url")
 		document.getElementById("link1").innerHTML = getCookie("link1content")
 
 	}
-	if ((getCookie("link2url")!=null && getCookie("link2content")!=null) && (getCookie("link2url")!="null" && getCookie("link2content")!="null")){
+	if (getCookie("link2url")!="null" && getCookie("link2content")!="null"){
 		document.getElementById("link2").href = getCookie("link2url")
 		document.getElementById("link2").innerHTML = getCookie("link2content")
 
@@ -85,7 +85,7 @@ function showHideSuggested(){
 
 function link2Change(){
 	link2url=prompt("Where do you want this link to go? (clear to remove link)")
-	if ((link2url!=null || link2url!="null") && link2url != "clear"){
+	if ((link2url!=null) && link2url != "clear"){
 		link2content=prompt("What do you want this link to say?")
 		setCookie("link2url", link2url, 365)
 		setCookie("link2content", link2content, 365)
