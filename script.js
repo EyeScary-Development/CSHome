@@ -44,22 +44,22 @@ function link1Change(){
 		setCookie("link1content", link1content, 365)
 		initialise()
 	} else if (link1url == "clear"){
-		setCookie("link1url", "null", 365)
+		setCookie("link1url", "", 365)
 	}
 }
 
 function initialise(){
-	if ((getCookie("link1url")!="null" && getCookie("link1content")!="null") && (getCookie("link1url")!=null && getCookie("link1content")!=null)){
+	if (getCookie("link1url")!="" && getCookie("link1content")!=""){
 		document.getElementById("link1").href = getCookie("link1url");
 		document.getElementById("link1").innerHTML = getCookie("link1content");
 	} else {
-		document.getElementById("favouriteHeading").style.dipslay="none";
+		document.getElementById("favouriteHeading").style.display="none";
 	}
-	if ((getCookie("link2url")!="null" && getCookie("link2content")!="null") && (getCookie("link2url")!=null && getCookie("link2content")!=null)){
+	if (getCookie("link2url")!="" && getCookie("link2content")!=""){
 		document.getElementById("link2").href = getCookie("link2url");
 		document.getElementById("link2").innerHTML = getCookie("link2content");
 	} else {
-		document.getElementById("favouriteHeading").style.dipslay="none";
+		document.getElementById("favouriteHeading").style.display="none";
 	}
 	if (getCookie("showSuggested") == "1"){
 		document.getElementById("suggested").style.display="block"
@@ -93,7 +93,7 @@ function link2Change(){
 		setCookie("link2content", link2content, 365)
 		initialise()
 	} else if (link2url == "clear"){
-		setCookie("link2url", "null", 365)
+		setCookie("link2url", "", 365)
 	}
 }
 
