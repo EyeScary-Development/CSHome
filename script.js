@@ -3,10 +3,14 @@ function searchTheWeb(){
 		var searchTerm=document.getElementById("searchText").value;
 	  if (searchTerm === ""){
         window.location.href="https://ecosia.org/chat"
-    } else{
-    		 console.log("https://www.ecosia.org/search?q=" + encodeURIComponent(searchTerm))
-				 window.location.href = "https://www.ecosia.org/search?q=" + encodeURIComponent(searchTerm)
-		}
+      } else if (searchTerm.startsWith("https://")){
+      	window.location.href=searchTerm
+      } else if (searchTerm.endsWith(".dev") || searchTerm.endsWith(".uk") || searchTerm.endsWith(".com") || searchTerm.endsWith(".org") || searchTerm.endsWith(".net")){
+      	window.location.href="https://"+searchTerm
+      } else{
+    	console.log("https://www.ecosia.org/search?q=" + encodeURIComponent(searchTerm))
+		window.location.href = "https://www.ecosia.org/search?q=" + encodeURIComponent(searchTerm)
+	  }
 }
 
 function setCookie(cname, cvalue, exdays) {
@@ -46,6 +50,9 @@ function initialise(){
 		document.getElementById("link1").innerHTML = getCookie("link1content")
 
 	}
+	if (getCookie("showSuggested") == "1"){
+		document.getElementById("suggested").style.display="block"
+	}
 }
 
 function openSettings(){
@@ -56,4 +63,13 @@ function openSettings(){
 function closeSettings(){
 	document.getElementById("settings").style.display="none"
 	document.getElementById("main").style.display="block"
+}
+
+function showHideSuggested(){
+	if (getCookie("showSuggested") == "1"){
+		setCookie("showSuggested", "0", 365)
+	} else {
+		setCookie("showSuggested", "1", 365)
+	}
+	initialise()
 }

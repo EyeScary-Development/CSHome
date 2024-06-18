@@ -14,12 +14,19 @@
 		<a id="link1" style="float:center;margin:10px;"></a>
 		</div>
 	</div>
+	<div class="content" style="display:none" id="suggested">
+		<h2>Continue with:</h2>
+		<a href="https://cscode.pages.dev/?continue=1">CSCode</a><a href="https://cstext.pages.dev/?continue=1" style="margin-left:10px;">CSText</a></div>
 	<div class="content"><a onclick="openSettings()">Settings</a><a href="https://cscode.pages.dev" style="margin-left:10px;">CSCode</a><a href="https://cstext.pages.dev" style="margin-left:10px;">CSText</a></div>
 	</div>
 	<div id="settings" class="content" style="display:none;">
+		<button onclick="closeSettings()">Close Settings</button>
+		<br>
 		<button onclick="link1Change()">Set or create link1</button>
 		<br>
-		<button onclick="closeSettings()">Close Settings</button>
+		<button onclick="showHideSuggested()">Show/Hide EyeScary suggestions</button>
+		<br>
+		<h3>CSHome, part of the CS product line from EyeScary Development</h3>
 	</div>
 	<script src="script.js"></script>
 </body>
