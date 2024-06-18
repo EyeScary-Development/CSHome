@@ -79,6 +79,7 @@ function initialise(){
 	}
 	if (getCookie("showClock") == "1"){
 		document.getElementById("tikklok").style.display="block"
+		tik()
 	}
 	if (getCookie("greeting") != "" && getCookie("greeting") != "clear"){
 		document.getElementById("greeting").innerHTML=getCookie("greeting")
