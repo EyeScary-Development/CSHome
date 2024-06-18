@@ -52,7 +52,8 @@ function initialise(){
 	if (getCookie("link1url")!="null" && getCookie("link1content")!="null"){
 		document.getElementById("link1").href = getCookie("link1url");
 		document.getElementById("link1").innerHTML = getCookie("link1content");
-		document.getElementById("favouriteHeading").style.dipslay="block";
+	} else {
+		document.getElementById("favouriteHeading").style.dipslay="none";
 	}
 	if (getCookie("link2url")!="null" && getCookie("link2content")!="null"){
 		document.getElementById("link2").href = getCookie("link2url");
