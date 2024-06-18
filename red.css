@@ -1,6 +1,6 @@
 /*
 Pittab Site Style Betterificator 1.2
-Colour Scheme: Catppuccin Mocha
+Colour Scheme: EyeScary Custom
 License: You can use this in whatever way you want, unless what you want to do is barred. What you can't do: you cannot claim it as your own invention unless you have modified it in some way other than changing the name
 One thing I must ask is that this block is never deleted from the file so the license is always available for reference
 Something to know: You'll want to put the content of your page in a content div, so the rounded box with the content of the site works
@@ -12,8 +12,8 @@ Something to know: You'll want to put the content of your page in a content div,
 body{
   font-family:sans-serif;
   font-size:16px;
-  background-color:#11111b;
-  color:#cdd6f4;
+  background-color:#972626;
+  color:#e0e0e0;
   margin:50px;
 }
 
@@ -23,8 +23,8 @@ body{
 .content{
   font-family:sans-serif;
   font-size:16px;
-  background-color:#1e1e2e;
-  color:#cdd6f4;
+  background-color:#ff4242;
+  color:#e0e0e0;
   margin:70px;
   padding:50px;
   border-radius:32px;
@@ -85,8 +85,8 @@ code{
   margin-bottom:10px;
   border-radius:12px;
   font-size:14px;
-  background-color:#11111b;
-  color:#cdd6f4;
+  background-color:#972626;
+  color:#e0e0e0;
   font-weight:650;
 }
 
@@ -95,13 +95,13 @@ code{
 
 a{
   text-decoration:none;
-  color:#cdd6f4;
+  color:#e0e0e0;
   font-weight:650;
   margin-top:10px;
   margin-bottom:10px;
 }
 a:hover{
-  color:#a6adc8;
+  color:#c9c9c9;
 }
 
  /*////*/
@@ -115,8 +115,8 @@ li{
 /*buttons*/
 
 button{
- background-color:#181825;  
- color:#cdd6f4;
+ background-color:#972626;  
+ color:#e0e0e0;
  border-width:0px;
  border-radius:12px;
  font-family:sans-serif;
@@ -128,7 +128,7 @@ button{
 }
 
 button:hover{
- background-color:#1e1e2e;  
+ background-color:#ff4242;  
 }
 
  /*///////*/
@@ -154,8 +154,8 @@ input, textarea{
   font-size:16px;
   border:none;
   padding:12px;
-  background-color:#181825;
-  color:#cdd6f4;
+  background-color:#972626;
+  color:#c9c9c9;
 }
 
 input:focus, textarea:focus{
@@ -163,8 +163,8 @@ input:focus, textarea:focus{
   font-family:sans-serif;
   font-weight:550;
   font-size:16px;
-  border:1px solid #cdd6f4;
+  border:1px solid #e0e0e0;
   padding:12px;
-  background-color:#181825;
-  color:#cdd6f4;
+  background-color:#972626;
+  color:#e0e0e0;
 }

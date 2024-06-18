@@ -36,16 +36,31 @@ function getCookie(cname) {
     return "";
 }
 
+function tik(){
+const now = new Date();
+
+let hours = now.getHours();
+let minutes = now.getMinutes();
+
+hours = hours < 10 ? "0" + hours : hours;
+minutes = minutes < 10 ? "0" + minutes : minutes;
+
+const currentTime = hours + ":" + minutes;
+
+document.getElementById("tikklok").innerHTML=currentTime;
+}
+setInterval(tik, 5000);
+
 function link1Change(){
 	link1url=prompt("Where do you want this link to go? (clear to remove link)")
 	if ((link1url!=null) && link1url != "clear"){
 		link1content=prompt("What do you want this link to say?")
 		setCookie("link1url", link1url, 365)
 		setCookie("link1content", link1content, 365)
-		initialise()
 	} else if (link1url == "clear"){
 		setCookie("link1url", "", 365)
 	}
+	initialise()
 }
 
 function initialise(){
@@ -62,6 +77,23 @@ function initialise(){
 	if (getCookie("showSuggested") == "1"){
 		document.getElementById("suggested").style.display="block"
 	}
+	if (getCookie("showClock") == "1"){
+		document.getElementById("tikklok").style.display="block"
+	}
+	if (getCookie("greeting") != "" && getCookie("greeting") != "clear"){
+		document.getElementById("greeting").innerHTML=getCookie("greeting")
+	}
+	if (getCookie("theme") != ""){
+		document.getElementById("styleLink").href=getCookie("theme")+".css"
+	}
+}
+function showHideClock(){
+	if (getCookie("showClock") == "1"){
+		setCookie("showClock", "0", 365)
+	} else {
+		setCookie("showClock", "1", 365)
+	}
+	initialise()
 }
 
 function openSettings(){
@@ -89,10 +121,25 @@ function link2Change(){
 		link2content=prompt("What do you want this link to say?")
 		setCookie("link2url", link2url, 365)
 		setCookie("link2content", link2content, 365)
-		initialise()
 	} else if (link2url == "clear"){
 		setCookie("link2url", "", 365)
 	}
+	initialise()
+}
+
+function themeChange(string) {
+  console.log("setting theme cookie...");
+  setCookie("theme", string, 365);
+  console.log("success!");
+  if (confirm("change theme?")) {
+    initialise();
+  } else {
+    alert("next time you reload CSHome, the changes will apply");
+  }
+}
+
+function customGreeting(){
+	setCookie("greeting", prompt("What would you like the greeting to say? (clear to show no custom greeting)"), 365)
 }
 
 initialise()
