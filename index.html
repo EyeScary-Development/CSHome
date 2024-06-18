@@ -6,7 +6,7 @@
 	<div id="main">
 	<div class="content">
 		<h1 id="greeting" style="display:block; text-align:center;">Hi.</h1>
-		<h2 id="tikklok" style="display:none"></h2>
+		<h2 id="tikklok" style="display:none; text-align:center;"></h2>
 		<div id="searchArea" style="float:center">
 		<spacer />
 		<form id="searchForm" onsubmit="return searchTheWeb()" style="display:block;">
@@ -22,11 +22,12 @@
 	<div class="content"><a onclick="openSettings()">Settings</a><a href="https://cscode.pages.dev" style="margin-left:10px;">CSCode</a><a href="https://cstext.pages.dev" style="margin-left:10px;">CSText</a></div>
 	</div>
 	<div id="settings" class="content" style="display:none;">
+		<a onclick="closeSettings()">Close Settings</a>
+		<br>
 		<select onchange="themeChange(this.value)">
 			<option value="style">Default</option>
 			<option value="red">Red</option>
 		</select>
-		<a onclick="closeSettings()">Close Settings</a>
 		<br>
 		<button onclick="link1Change()">Set or create link1</button>
 		<br>
