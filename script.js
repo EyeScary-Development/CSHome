@@ -58,6 +58,8 @@ function initialise(){
 	if (getCookie("link2url")!="null" && getCookie("link2content")!="null"){
 		document.getElementById("link2").href = getCookie("link2url");
 		document.getElementById("link2").innerHTML = getCookie("link2content");
+	} else {
+		document.getElementById("favouriteHeading").style.dipslay="none";
 	}
 	if (getCookie("showSuggested") == "1"){
 		document.getElementById("suggested").style.display="block"
