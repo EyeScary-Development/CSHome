@@ -85,7 +85,7 @@ function showHideSuggested(){
 
 function link2Change(){
 	link2url=prompt("Where do you want this link to go? (clear to remove link)")
-	if (link2url!=null || link2url!="null"){
+	if ((link2url!=null || link2url!="null") && link2url != "clear"){
 		link2content=prompt("What do you want this link to say?")
 		setCookie("link2url", link2url, 365)
 		setCookie("link2content", link2content, 365)
