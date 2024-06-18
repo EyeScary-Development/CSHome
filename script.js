@@ -50,13 +50,13 @@ function link1Change(){
 
 function initialise(){
 	if (getCookie("link1url")!="null" && getCookie("link1content")!="null"){
-		document.getElementById("link1").href = getCookie("link1url")
-		document.getElementById("link1").innerHTML = getCookie("link1content")
-		document.getElementById("favouriteHeading").style.dipslay="block"
+		document.getElementById("link1").href = getCookie("link1url");
+		document.getElementById("link1").innerHTML = getCookie("link1content");
+		document.getElementById("favouriteHeading").style.dipslay="block";
 	}
 	if (getCookie("link2url")!="null" && getCookie("link2content")!="null"){
-		document.getElementById("link2").href = getCookie("link2url")
-		document.getElementById("link2").innerHTML = getCookie("link2content")
+		document.getElementById("link2").href = getCookie("link2url");
+		document.getElementById("link2").innerHTML = getCookie("link2content");
 		document.getElementById("favouriteHeading").style.dipslay="block"
 	}
 	if (getCookie("showSuggested") == "1"){
