@@ -57,7 +57,7 @@ function initialise(){
 	if (getCookie("link2url")!="null" && getCookie("link2content")!="null"){
 		document.getElementById("link2").href = getCookie("link2url")
 		document.getElementById("link2").innerHTML = getCookie("link2content")
-
+		document.getElementById("favouriteHeading").style.dipslay="block"
 	}
 	if (getCookie("showSuggested") == "1"){
 		document.getElementById("suggested").style.display="block"
