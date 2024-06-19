@@ -165,7 +165,7 @@ function customSearchEngine(){
 	if (engine=="clear"){
 		setCookie("searchEngine", "", 365)
 	} else if (engine != null) {
-	setCookie("searchEngine")
+	setCookie("searchEngine", engine, 365)
 	}
 }
 
