@@ -84,11 +84,12 @@ function initialise(){
 	if (getCookie("greeting") != "" && getCookie("greeting") != "clear"){
 		document.getElementById("greeting").innerHTML=getCookie("greeting")
 	}
-	if (getCookie("colour") != "") {
-		document.body.style.backgroundColor=getCookie("colour");
-	} else if (getCookie("theme") != ""){
+	if (getCookie("theme") != ""){
 		document.getElementById("styleLink").href=getCookie("theme")+".css"
 	}
+	if (getCookie("colour") != "") {
+		document.body.style.backgroundColor=getCookie("colour");
+	} 
 }
 function showHideClock(){
 	if (getCookie("showClock") == "1"){
