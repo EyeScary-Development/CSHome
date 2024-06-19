@@ -1,6 +1,7 @@
 function searchTheWeb(){
 		event.preventDefault()
 		var searchTerm=document.getElementById("searchText").value;
+		var searchEngine = getCookie("searchEngine")
 	  if (searchTerm === ""){
         window.location.href="https://ecosia.org/chat"
     } else if (searchTerm.startsWith("https://")){
@@ -8,10 +9,10 @@ function searchTheWeb(){
     } else if (searchTerm.endsWith(".dev") || searchTerm.endsWith(".uk") || searchTerm.endsWith(".com") || searchTerm.endsWith(".org") || searchTerm.endsWith(".net")){
     	window.location.href="https://"+searchTerm
     } else{
-			if (getCookie("searchEngine") == ""){
+			if (searchEngine == ""){
 		  	window.location.href = "https://www.ecosia.org/search?q=" + encodeURIComponent(searchTerm)
 			} else {
-				window.location.href = getCookie("searchEngine") + "/search?q=" + encodeURIComponent(searchTerm)
+				window.location.href = "https://" + searchEngine + "/search?q=" + encodeURIComponent(searchTerm)
 			}
 	  }
 }
@@ -160,7 +161,7 @@ function customColour(){
 }
 
 function customSearchEngine(){
-	var engine=prompt("choose a search engine (format like https:// (searchengine.com)) (clear to remove)")
+	var engine=prompt("choose a search engine (format like (searchengine.com) (no need for https:// here)) (clear to remove)")
 	if (engine=="clear"){
 		setCookie("searchEngine", "", 365)
 	} else if (engine != null) {
