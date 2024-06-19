@@ -12,7 +12,7 @@
 		<form id="searchForm" onsubmit="return searchTheWeb()" style="display:block;">
 			<input style="text-align:center;width:100%" type="text" id="searchText" placeholder="search the web..">
 		</form>
-		<h4 id="favouriteHeading">Your favourites:</h4>
+		<h4 id="favouriteHeading" style="display:block;">Your favourites:</h4>
 		<a id="link1" style="float:center;margin:10px;"></a> <a id="link2" style="float:center;margin:10px;"></a>
 		</div>
 	</div>
@@ -27,6 +27,8 @@
 		<select onchange="themeChange(this.value)">
 			<option value="style">Default</option>
 			<option value="red">Red</option>
+			<option value="blue">Blue</option>
+			<option value="material">Material</option>
 		</select>
 		<br>
 		<button onclick="link1Change()">Set or create link1</button>
