@@ -67,8 +67,9 @@ function initialise(){
 	if (getCookie("link1url")!="" && getCookie("link1content")!=""){
 		document.getElementById("link1").href = getCookie("link1url");
 		document.getElementById("link1").innerHTML = getCookie("link1content");
-		document.getElementById("favouriteHeading").style.display="block";
-	} 
+	} else {
+		document.getElementById("favouriteHeading").style.display="none";
+	}
 	if (getCookie("link2url")!="" && getCookie("link2content")!=""){
 		document.getElementById("link2").href = getCookie("link2url");
 		document.getElementById("link2").innerHTML = getCookie("link2content");
