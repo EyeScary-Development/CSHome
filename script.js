@@ -52,7 +52,7 @@ document.getElementById("tikklok").innerHTML=currentTime;
 setInterval(tik, 5000);
 
 function link1Change(){
-	link1url=prompt("Where do you want this link to go? (clear to remove link)")
+	link1url=prompt("Where do you want this link to go? (start with https://) (clear to remove link)")
 	if ((link1url!=null) && link1url != "clear"){
 		link1content=prompt("What do you want this link to say?")
 		setCookie("link1url", link1url, 365)
@@ -119,7 +119,7 @@ function showHideSuggested(){
 }
 
 function link2Change(){
-	link2url=prompt("Where do you want this link to go? (clear to remove link)")
+	link2url=prompt("Where do you want this link to go? (start with https://) (clear to remove link)")
 	if ((link2url!=null) && link2url != "clear"){
 		link2content=prompt("What do you want this link to say?")
 		setCookie("link2url", link2url, 365)
