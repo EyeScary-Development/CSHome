@@ -8,7 +8,7 @@
 		<h1 id="greeting" style="display:block; text-align:center;">Hi.</h1>
 		<h2 id="tikklok" style="display:none; text-align:center;"></h2>
 		<div id="searchArea" style="float:center">
-		<spacer />
+		<spacer></spacer>
 		<form id="searchForm" onsubmit="return searchTheWeb()" style="display:block;">
 			<input style="text-align:center;width:100%" type="text" id="searchText" placeholder="search the web..">
 		</form>
@@ -23,14 +23,14 @@
 	</div>
 	<div id="settings" class="content" style="display:none;">
 		<a onclick="closeSettings()">Close Settings</a>
-		<spacer />
+		<spacer></spacer>
 		<select onchange="themeChange(this.value)">
 			<option value="style">Default</option>
 			<option value="red">Red</option>
 			<option value="blue">Blue</option>
 			<option value="material">Material</option>
 		</select>
-		<spacer />
+		<spacer></spacer>
 		<button onclick="link1Change()">Set or create link1</button>
 		<br>
 		<button onclick="link2Change()">Set or create link2</button>

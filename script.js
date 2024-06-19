@@ -84,7 +84,9 @@ function initialise(){
 	if (getCookie("greeting") != "" && getCookie("greeting") != "clear"){
 		document.getElementById("greeting").innerHTML=getCookie("greeting")
 	}
-	if (getCookie("theme") != ""){
+	if (getCookie("colour") != "") {
+		document.body.style.backgroundColor=getCookie("colour");
+	} else if (getCookie("theme") != ""){
 		document.getElementById("styleLink").href=getCookie("theme")+".css"
 	}
 }
@@ -141,6 +143,16 @@ function themeChange(string) {
 
 function customGreeting(){
 	setCookie("greeting", prompt("What would you like the greeting to say? (clear to show no custom greeting)"), 365)
+}
+
+function customColour(){
+	var colore= prompt("Input a HEX colour code starting with # (input clear to remove custom colour)")
+	if (colore != "clear" && colore != null){
+		setCookie("colour", colore, 365)
+	} else if (colore == "clear") {
+		setCookie("colour", "", 365)
+	}
+	initialise();
 }
 
 initialise()
