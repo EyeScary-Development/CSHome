@@ -1,19 +1,29 @@
-function searchTheWeb(){
-		var searchTerm=document.getElementById("searchText").value;
-		var searchEngine = getCookie("searchEngine")
-	  if (searchTerm === ""){
-        window.location.href="https://ecosia.org/chat"
-    } else if (searchTerm.startsWith("https://")){
-      window.location.href=searchTerm
-    } else if (searchTerm.endsWith(".dev") || searchTerm.endsWith(".uk") || searchTerm.endsWith(".com") || searchTerm.endsWith(".org") || searchTerm.endsWith(".net") || searchTerm.endsWith(".it") || searchTerm.endsWith(".io")){
-    	window.location.href="https://"+searchTerm
-    } else{
-			if (searchEngine == ""){
-		  	window.location.href = "https://www.ecosia.org/search?q=" + encodeURIComponent(searchTerm)
-			} else {
-				window.location.href = searchEngine.replace("%s", encodeURIComponent(searchTerm));
-			}
-	  }
+var domainEndings = ["uk", "com", "net", "org", "co", "ooo", "ca", "de", "eu", "us", "cn", "in", "website", "site", "tr", "dev", "it", "io"]
+function searchTheWeb() {
+	var searchTerm = document.getElementById("searchInput").value;
+	var engine = getCookie("engine") || "https://ecosia.org/search?q=%s";
+
+	console.log(searchTerm);
+
+	setCookie('points', parseInt(getCookie('points')) + 1, 365);
+	getPoints();
+
+	var queryEnding = searchTerm.split(".");
+	queryEnding = queryEnding[queryEnding.length - 1];
+	console.log(queryEnding);
+
+	if (searchTerm === "") {
+			console.log("Empty search string");
+	} else if (searchTerm.startsWith("https://") || searchTerm.startsWith("http://") || searchTerm.startsWith("?")) {
+			window.location.href = searchTerm;
+	} else if (searchTerm.startsWith("!")) {
+			window.location.href = "https://duckduckgo.com/?q=" + encodeURIComponent(searchTerm);
+	} else if (domainEndings.includes(queryEnding)) {
+			window.location.href = "https://" + searchTerm;
+	} else {
+			window.location.href = engine.replace("%s", encodeURIComponent(searchTerm));
+	}
+	return false; // Prevent default form submission
 }
 
 function setCookie(cname, cvalue, exdays) {
@@ -160,7 +170,7 @@ function customColour(){
 }
 
 function customSearchEngine(){
-	var engine=prompt("choose a search engine (search engine URL (with https://) with %s in place of query) (clear to remove)\n\n current is: " + getCookie("searchEngine"))
+	var engine=prompt("choose a search engine (search engine URL with %s in place of query (use https:// at start)) (clear to remove)\n\n current is: " + getCookie("searchEngine"))
 	if (engine=="clear"){
 		setCookie("searchEngine", "", 365)
 	} else if (engine != null) {
