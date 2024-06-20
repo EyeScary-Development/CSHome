@@ -1,5 +1,4 @@
 function searchTheWeb(){
-		event.preventDefault()
 		var searchTerm=document.getElementById("searchText").value;
 		var searchEngine = getCookie("searchEngine")
 	  if (searchTerm === ""){
