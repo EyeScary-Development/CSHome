@@ -12,7 +12,7 @@ function searchTheWeb(){
 			if (searchEngine == ""){
 		  	window.location.href = "https://www.ecosia.org/search?q=" + encodeURIComponent(searchTerm)
 			} else {
-				window.location.href = "https://" + searchEngine + "/search?q=" + encodeURIComponent(searchTerm)
+				window.location.href = "https://" + searchEngine.replace("%s", encodeURIComponent(searchTerm))
 			}
 	  }
 }
@@ -161,7 +161,7 @@ function customColour(){
 }
 
 function customSearchEngine(){
-	var engine=prompt("choose a search engine (format like (searchengine.com) (no need for https:// here)) (clear to remove)")
+	var engine=prompt("choose a search engine (search engine URL with %s in place of query) (clear to remove)\n\n current is: " + getCookie("searchEngine"))
 	if (engine=="clear"){
 		setCookie("searchEngine", "", 365)
 	} else if (engine != null) {
